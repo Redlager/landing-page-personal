@@ -1,23 +1,23 @@
-// Animación simple de fade-in al hacer scroll
+// Intersección para animaciones suaves on-scroll
 const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-  threshold: 0,
-  rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if(!entry.isIntersecting){
-      return;
-    } else {
-      entry.target.classList.add('opacity-100','translate-y-0');
-      appearOnScroll.unobserve(entry.target);
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
     }
   });
-}, appearOptions);
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+faders.forEach(el => io.observe(el));
 
-faders.forEach(fader => {
-  fader.classList.add('opacity-0','translate-y-10','transition','duration-700');
-  appearOnScroll.observe(fader);
+// Suavizar anchor interno (por si el navegador no lo hace)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    const id = anchor.getAttribute('href');
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
