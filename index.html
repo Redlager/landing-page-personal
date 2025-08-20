@@ -1,82 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Renzo Gabriel Fedeli | Arquitecto de Software</title>
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome CDN -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-gray-900 text-white">
+  <meta name="description" content="Arquitecto de Software en Posadas, Misiones. Diseño soluciones escalables, bots y plataformas web con foco en negocio." />
 
-  <!-- Hero Section -->
-  <header class="relative h-screen flex items-center justify-center text-center bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 overflow-hidden">
-    <div class="absolute inset-0 bg-black/30"></div>
-    <div class="relative z-10 px-4 max-w-3xl">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Renzo Gabriel Fedeli</h1>
-      <h2 class="text-xl md:text-2xl font-semibold mb-4 text-gray-200">Arquitecto de Software | Posadas, Misiones - Argentina</h2>
-      <p class="text-gray-100 mb-6">Diseño soluciones digitales, desarrollo de software, bots y arquitecturas escalables para empresas modernas.</p>
-      <div class="flex justify-center space-x-4">
-        <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="bg-green-500 hover:bg-green-600 p-4 rounded-full text-white text-2xl transition transform hover:scale-110">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://linkedin.com/in/XXXXXXXXXX" target="_blank" class="bg-blue-700 hover:bg-blue-800 p-4 rounded-full text-white text-2xl transition transform hover:scale-110">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://instagram.com/XXXXXXXXXX" target="_blank" class="bg-pink-500 hover:bg-pink-600 p-4 rounded-full text-white text-2xl transition transform hover:scale-110">
-          <i class="fab fa-instagram"></i>
-        </a>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-white font-[Inter] antialiased">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 right-0 z-40 backdrop-blur bg-gray-900/70 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#inicio" class="font-extrabold tracking-tight">RGF<span class="text-pink-500">.</span></a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </div>
+      <a href="#contacto" class="hidden md:inline-block bg-pink-600 hover:bg-pink-500 px-4 py-2 rounded-lg text-sm font-semibold transition">Hablemos</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="inicio" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1600&q=80" alt="Fondo tecnología" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-tr from-black via-black/60 to-transparent"></div>
+
+    <div class="relative z-10 px-6 md:px-8 max-w-3xl fade-in">
+      <p class="uppercase tracking-widest text-sm text-white/70 mb-2">Arquitecto de Software</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+        Construyo productos <span class="text-pink-400">escalables</span> que mueven el negocio
+      </h1>
+      <p class="text-white/80 md:text-lg mb-8">
+        Diseño arquitectura cloud, desarrollo web end-to-end y automatización con bots. Tiempo a valor corto, calidad alta.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="btn-primary"><i class="fa-brands fa-whatsapp mr-2"></i> Escribime por WhatsApp</a>
+        <a href="#servicios" class="btn-secondary">Ver servicios</a>
       </div>
     </div>
   </header>
 
   <!-- Sobre mí -->
-  <section class="py-20 bg-gray-800 text-center">
-    <h2 class="text-3xl font-bold mb-6 text-blue-400">Sobre mí</h2>
-    <p class="max-w-2xl mx-auto text-gray-300 mb-6">
-      Soy Renzo Gabriel Fedeli, arquitecto de software con experiencia en desarrollo web y empresarial. Me apasiona crear soluciones escalables, eficientes y modernas, siempre con un enfoque profesional y humano.
-    </p>
-    <img src="https://source.unsplash.com/600x400/?technology,programming" alt="Imagen tecnología" class="mx-auto rounded-lg shadow-lg">
+  <section class="py-24 bg-gray-950" id="sobre-mi">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div class="fade-in">
+        <h2 class="section-title">Sobre mí</h2>
+        <p class="text-white/80 leading-relaxed mb-6">
+          Soy <strong>Renzo Gabriel Fedeli</strong>, de Posadas, Misiones. Combino estrategia, arquitectura y delivery para transformar ideas en plataformas robustas. 
+          Me enfoco en <em>performance</em>, seguridad y escalabilidad, siempre alineado a objetivos de negocio.
+        </p>
+        <ul class="space-y-3 text-white/80">
+          <li><i class="fa-solid fa-circle-check text-green-400 mr-2"></i> Arquitectura cloud y microservicios</li>
+          <li><i class="fa-solid fa-circle-check text-green-400 mr-2"></i> Frontend Angular / Backend Node.js</li>
+          <li><i class="fa-solid fa-circle-check text-green-400 mr-2"></i> Automatización y bots</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=1200&q=80" alt="Renzo trabajando" class="w-full rounded-2xl shadow-2xl ring-1 ring-white/10 object-cover">
+      </div>
+    </div>
   </section>
 
   <!-- Servicios -->
-  <section class="py-20 bg-gradient-to-r from-blue-600 via-purple-700 to-pink-600 text-white">
-    <h2 class="text-3xl font-bold text-center mb-12">Servicios</h2>
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transform transition">
-        <i class="fas fa-cloud text-4xl text-blue-400 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Cloud & Arquitectura</h3>
-        <p>Diseño arquitecturas escalables, seguras y optimizadas para negocios modernos.</p>
-      </div>
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transform transition">
-        <i class="fas fa-code text-4xl text-green-400 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Desarrollo</h3>
-        <p>Frontend y backend usando Angular y Node.js, con foco en calidad y eficiencia.</p>
-      </div>
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transform transition">
-        <i class="fas fa-robot text-4xl text-pink-400 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Automatización / Bots</h3>
-        <p>Implementación de chatbots y automatización de procesos empresariales.</p>
+  <section class="py-24 bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700" id="servicios">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <h2 class="section-title text-center mb-12">Servicios</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="card fade-in">
+          <i class="fas fa-cloud text-4xl text-blue-400 mb-4"></i>
+          <h3 class="card-title">Cloud & Arquitectura</h3>
+          <p class="card-text">Diseño arquitecturas seguras y elásticas (AWS) con pipelines CI/CD, observabilidad y costos controlados.</p>
+        </article>
+        <article class="card fade-in">
+          <i class="fas fa-code text-4xl text-green-400 mb-4"></i>
+          <h3 class="card-title">Desarrollo</h3>
+          <p class="card-text">Frontend Angular y backend Node.js/Express. APIs limpias, tests y performance para escalar sin dolor.</p>
+        </article>
+        <article class="card fade-in">
+          <i class="fas fa-robot text-4xl text-pink-300 mb-4"></i>
+          <h3 class="card-title">Automatización / Bots</h3>
+          <p class="card-text">Chatbots y RPA para atención, ventas y operaciones. Menos tareas manuales, más resultados.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Contacto -->
-  <section class="py-20 bg-gray-900 text-center">
-    <h2 class="text-3xl font-bold mb-6 text-blue-400">Contacto</h2>
-    <p class="mb-6 text-gray-300">¿Querés trabajar juntos o hablar sobre un proyecto? Hablemos.</p>
-    <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 px-8 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105">
-      📲 WhatsApp
-    </a>
+  <section class="py-24 bg-gray-900 text-center" id="contacto">
+    <div class="max-w-3xl mx-auto px-6 fade-in">
+      <h2 class="section-title mb-6">Contacto</h2>
+      <p class="text-white/80 mb-8">¿Listo para despegar tu proyecto? Reservá una consulta o escribime y te respondo hoy.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="btn-primary"><i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp directo</a>
+        <a href="https://linkedin.com/in/XXXXXXXXXX" target="_blank" class="btn-secondary"><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn</a>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer class="py-6 bg-gray-800 text-gray-400 text-center">
-    <p>© 2025 Renzo Gabriel Fedeli | Arquitecto de Software</p>
+    <p>© 2025 Renzo Gabriel Fedeli — Arquitecto de Software</p>
   </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-xl transition transform hover:scale-110" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
 
   <script src="script.js"></script>
 </body>
