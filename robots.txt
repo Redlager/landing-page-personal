@@ -1,3 +1,28 @@
+# Permitir indexación normal
 User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://coderneural.com/sitemap.xml
+
+# Bloquear bots de entrenamiento de IA
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
