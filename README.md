@@ -26,8 +26,10 @@ open index.html   # (o doble click en index.html)
 
 ## 📬 Contacto
 
-💼 [LinkedIn](https://linkedin.com/in/renzo-g-fedeli)  
-🌐 [coderneural.com](https://coderneural.com)  
+<p align="left">
+  💼 <a href="https://linkedin.com/in/renzo-g-fedeli" target="_blank">LinkedIn</a><br>
+  🌐 <a href="https://coderneural.com" target="_blank">coderneural.com</a><br>
+</p>
 
 ---
 
