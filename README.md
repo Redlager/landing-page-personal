@@ -27,11 +27,14 @@ git clone https://github.com/usuario/landing-page-personal.git
 cd landing-page-personal
 open index.html   # (o doble click en index.html)
 ```
+---
 
 ## 📬 Contacto
 
 💼 LinkedIn
 
 🌐 coderneural.com
+
+---
 
 ❤️ Hecho con amor por Renzo G. Fedeli
