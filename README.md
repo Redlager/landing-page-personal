@@ -1,10 +1,5 @@
 # 🌐 Landing Page Personal
 
-[![Website](https://img.shields.io/badge/Web-coderneural.com-pink?style=for-the-badge&logo=vercel)](https://coderneural.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Renzo%20Fedeli-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/renzo-g-fedeli)
-
----
-
 ## 📖 Descripción
 Landing page personal para presentar mis **servicios de software e inteligencia artificial**.  
 Diseñada como carta de presentación profesional y publicada en **GitHub Pages + Cloudflare**.
@@ -31,9 +26,8 @@ open index.html   # (o doble click en index.html)
 
 ## 📬 Contacto
 
-💼 LinkedIn
-
-🌐 coderneural.com
+💼 [LinkedIn](https://linkedin.com/in/renzo-g-fedeli)  
+🌐 [coderneural.com](https://coderneural.com)  
 
 ---
 
