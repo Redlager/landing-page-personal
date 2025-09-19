@@ -1,156 +1,277 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CoderNeural | Consultoría de Software & IA</title>
-  
-  <!-- SEO & Open Graph -->
-  <meta name="description" content="CoderNeural: consultoría de software e IA para pymes, empresas y proyectos privados. Arquitectura cloud, desarrollo web y automatización con OpenAI y Azure." />
-  <meta property="og:title" content="CoderNeural | Consultoría de Software & IA" />
-  <meta property="og:description" content="Soluciones escalables con IA, Node.js/NestJS, Angular, Python y Azure." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_1280.jpg?auto=format&fit=crop&w=1200&q=80" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CoderNeural | Consultoría de Software & IA</title>
 
-  <!-- Progressive Web App / Windows -->
-  <meta name="theme-color" content="#0b0f1a">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-config" content="/browserconfig.xml">
+    <!-- SEO & Open Graph -->
+    <meta
+      name="description"
+      content="CoderNeural: consultoría de software e IA para pymes, empresas y proyectos privados. Arquitectura cloud, desarrollo web y automatización con OpenAI y Azure."
+    />
+    <meta
+      property="og:title"
+      content="CoderNeural | Consultoría de Software & IA"
+    />
+    <meta
+      property="og:description"
+      content="Soluciones escalables con IA, Node.js/NestJS, Angular, Python y Azure."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_1280.jpg?auto=format&fit=crop&w=1200&q=80"
+    />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" sizes="any">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+    <!-- Progressive Web App / Windows -->
+    <meta name="theme-color" content="#0b0f1a" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <!-- Fuente -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="bg-gray-900 text-white font-[Inter] antialiased">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" sizes="any" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
 
-  <!-- Nav -->
-  <nav class="fixed top-0 left-0 right-0 z-40 backdrop-blur bg-gray-900/70 border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#inicio" class="font-extrabold tracking-tight flex items-center gap-2">
-        <img id="site-logo" src="assets/coderneural-logo-32.svg" alt="Logo CoderNeural" class="w-8 h-8 rounded-md object-contain" loading="lazy" decoding="async"
-             onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline-flex'">
-        <span id="logo-fallback" class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-pink-600" style="display:none">CN</span>
-        <span>CoderNeural</span>
-      </a>
-      <div class="hidden md:flex items-center gap-6">
-        <a href="#sobre-mi" class="nav-link">Sobre nosotros</a>
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#stack" class="nav-link">Tecnologías</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Fuente -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900 text-white font-[Inter] antialiased">
+    <!-- Nav -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-40 backdrop-blur bg-gray-900/70 border-b border-white/5"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <a
+          href="#inicio"
+          class="font-extrabold tracking-tight flex items-center gap-2"
+        >
+          <img
+            id="site-logo"
+            src="assets/coderneural-logo-32.svg"
+            alt="Logo CoderNeural"
+            class="w-8 h-8 rounded-md object-contain"
+            loading="lazy"
+            decoding="async"
+            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline-flex'"
+          />
+          <span
+            id="logo-fallback"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-pink-600"
+            style="display: none"
+            >CN</span
+          >
+          <span>CoderNeural</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#sobre-mi" class="nav-link">Sobre nosotros</a>
+          <a href="#servicios" class="nav-link">Servicios</a>
+          <a href="#stack" class="nav-link">Tecnologías</a>
+          <a href="#contacto" class="nav-link">Contacto</a>
+        </div>
+        <a
+          href="#contacto"
+          class="hidden md:inline-block bg-pink-600 hover:bg-pink-500 px-4 py-2 rounded-lg text-sm font-semibold transition"
+          >Hablemos</a
+        >
       </div>
-      <a href="#contacto" class="hidden md:inline-block bg-pink-600 hover:bg-pink-500 px-4 py-2 rounded-lg text-sm font-semibold transition">Hablemos</a>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Hero -->
-   <header id="inicio" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
-    <img src="https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_1280.jpg?auto=format&fit=crop&w=1600&q=80" alt="Fondo tecnología"  class="absolute inset-0 w-full h-full object-cover blur-sm" />
-    <div class="absolute inset-0 bg-gradient-to-tr from-black via-black/70 to-transparent"></div>
+    <!-- Hero -->
+    <header
+      id="inicio"
+      class="relative min-h-screen flex items-center justify-center text-center overflow-hidden"
+    >
+      <img
+        src="https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_1280.jpg?auto=format&fit=crop&w=1600&q=80"
+        alt="Fondo tecnología"
+        class="absolute inset-0 w-full h-full object-cover blur-sm"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-tr from-black via-black/70 to-transparent"
+      ></div>
 
-   <div class="relative z-10 px-6 md:px-8 max-w-3xl fade-in">
-  <p class="uppercase tracking-widest text-sm text-white/70 mb-2">Consultoría de Software & IA</p>
-  <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
-    Software <span class="text-pink-400">escalable</span> y <span class="text-pink-400">IA aplicada</span> para tu negocio
-  </h1>
-  <p class="text-white/80 md:text-lg mb-4">
-    Soluciones para <strong>pymes</strong>, <strong>empresas</strong> y <strong>proyectos privados</strong>: arquitectura, desarrollo web y automatización para que tu negocio sea más ágil y competitivo.
-  </p>
+      <div class="relative z-10 px-6 md:px-8 max-w-3xl fade-in">
+        <p class="uppercase tracking-widest text-sm text-white/70 mb-2">
+          Consultoría de Software & IA
+        </p>
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+  Software <span class="text-pink-400">escalable</span> y
+  <span class="text-pink-400">IA aplicada</span> para tu negocio
+</h1>
+        <p class="text-white/80 md:text-lg mb-4">
+          Soluciones para <strong>pymes</strong>, <strong>empresas</strong> y
+          <strong>proyectos privados</strong>: arquitectura, desarrollo web y
+          automatización para que tu negocio sea más ágil y competitivo.
+        </p>
 
-  <!-- Chips de segmentación -->
-  <div class="flex flex-wrap justify-center gap-2 mb-8">
-    <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm ring-1 ring-white/10">Pymes</span>
-    <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm ring-1 ring-white/10">Empresas</span>
-    <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm ring-1 ring-white/10">Proyectos privados</span>
-  </div>
+        <!-- Chips de segmentación -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm ring-1 ring-white/10"
+            >Pymes</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm ring-1 ring-white/10"
+            >Empresas</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm ring-1 ring-white/10"
+            >Proyectos privados</span
+          >
+        </div>
 
-  <div class="flex flex-col sm:flex-row gap-3 justify-center">
-    <a href="https://wa.me/3764983924?text=Hola%20Renzo,%20quisiera%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20CoderNeural.%20%F0%9F%99%8C" target="_blank" class="btn-primary">
-      <i class="fa-brands fa-whatsapp mr-2"></i> Agenda una llamada
-    </a>
-    <a href="#servicios" class="btn-secondary">Ver servicios</a>
-  </div>
-</div>
-  </header>
- 
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="https://wa.me/3764983924?text=Hola%20Renzo,%20quisiera%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20CoderNeural.%20%F0%9F%99%8C"
+            target="_blank"
+            class="btn-primary"
+          >
+            <i class="fa-brands fa-whatsapp mr-2"></i> Agenda una llamada
+          </a>
+          <a href="#servicios" class="btn-secondary">Ver servicios</a>
+        </div>
+      </div>
+    </header>
 
-  <!-- Sobre mí / nosotros -->
-  <section class="py-24 bg-gray-950" id="sobre-mi">
-    <div class="max-w-7xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-12 items-center">
-      <div class="fade-in">
-        <h2 class="section-title">Quiénes somos</h2>
-      <p class="text-white/80 leading-relaxed mb-6">
-  En <strong>CoderNeural</strong>, liderado por Renzo Fedeli en Posadas (AR), unimos desarrollo de software y automatización con IA para crear plataformas confiables y escalables.
-  <strong>Acompañamos a pymes, empresas y proyectos privados</strong> tecnología segura, eficiente y alineada a sus objetivos de negocio.
+    <!-- Sobre mí / nosotros -->
+    <section class="py-24 bg-gray-950" id="sobre-mi">
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div class="fade-in">
+          <h2 class="section-title">Quiénes somos</h2>
+          <p class="text-white/80 leading-relaxed mb-6">
+  En <strong>CoderNeural</strong>, liderado por <strong>Renzo Fedeli</strong> en
+  Posadas (AR), unimos desarrollo de software y automatización con IA
+  para crear plataformas confiables y escalables. <strong>Acompañamos a pymes, empresas y proyectos privados</strong>
+  con tecnología segura, eficiente y alineada a sus objetivos de negocio.
+  <span class="block mt-3 text-sm text-white/70">Renzo Fedeli cuenta con 5 años de experiencia en desarrollo web y arquitecturas escalables.</span>
 </p>
-        <ul class="space-y-3 text-white/80">
-          <li><i class="fa-solid fa-circle-check text-green-400 mr-2"></i> Soluciones en la nube listas para crecer.</li>
-          <li><i class="fa-solid fa-circle-check text-green-400 mr-2"></i> Aplicaciones web modernas y fáciles de mantener.</li>
-          <li><i class="fa-solid fa-circle-check text-green-400 mr-2"></i> IA aplicada para agilizar procesos y mejorar la atención.</li>
-        </ul>
+          <ul class="space-y-3 text-white/80">
+            <li>
+              <i class="fa-solid fa-circle-check text-green-400 mr-2"></i>
+              Soluciones en la nube listas para crecer.
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check text-green-400 mr-2"></i>
+              Aplicaciones web modernas y fáciles de mantener.
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check text-green-400 mr-2"></i> IA
+              aplicada para agilizar procesos y mejorar la atención.
+            </li>
+          </ul>
+        </div>
+        <div class="fade-in">
+          <img
+            src="assets/FOTO-RENZO-1-800.jpeg"
+            srcset="
+              assets/FOTO-RENZO-1-400.jpeg   400w,
+              assets/FOTO-RENZO-1-800.jpeg   800w,
+              assets/FOTO-RENZO-1-1200.jpeg 1200w
+            "
+            sizes="(max-width: 768px) 90vw, 600px"
+            alt="Equipo trabajando"
+            loading="lazy"
+            decoding="async"
+            class="w-full max-w-md rounded-2xl shadow-2xl ring-1 ring-white/10 object-cover mx-auto"
+          />
+        </div>
       </div>
-      <div class="fade-in">
-        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=1200&q=80" alt="Equipo trabajando" class="w-full rounded-2xl shadow-2xl ring-1 ring-white/10 object-cover">
+
+      <!-- Nueva subsección: agregar integrante -->
+      <div
+        class="max-w-5xl mx-auto px-6 md:px-8 mt-20 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div class="fade-in order-2 md:order-1">
+          <img
+            src="assets/FOTO-VIC-1-800.jpeg"
+            srcset="
+              assets/FOTO-VIC-1-400.jpeg   400w,
+              assets/FOTO-VIC-1-800.jpeg   800w,
+              assets/FOTO-VIC-1-1200.jpeg 1200w
+            "
+            sizes="(max-width: 768px) 90vw, 360px"
+            alt="Foto Victoria"
+            loading="lazy"
+            decoding="async"
+            class="w-full max-w-xs md:max-w-sm rounded-2xl shadow-2xl ring-1 ring-white/10 object-cover mx-auto"
+          />
+        </div>
+        <div class="fade-in order-1 md:order-2">
+          <h3 class="text-lg md:text-xl font-semibold text-white mb-3">
+            Victoria Schimelfenning
+          </h3>
+          <p class="text-white/80 leading-relaxed">
+            Diseñadora UX/UI visual en formación de programación, apasionada por
+            crear interfaces limpias, intuitivas y atractivas. Aporta al equipo
+            de <strong>CoderNeural</strong> con un enfoque en experiencia de
+            usuario y estética moderna, complementando el desarrollo con una
+            mirada creativa.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Nueva subsección: agregar integrante -->
-  <div class="max-w-5xl mx-auto px-6 md:px-8 mt-20 grid md:grid-cols-2 gap-12 items-center">
-    <div class="fade-in order-2 md:order-1">
-      <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=1200&q=80" alt="Foto victoria" class="w-full max-w-sm rounded-2xl shadow-2xl ring-1 ring-white/10 object-cover mx-auto">
-    </div>
-    <div class="fade-in order-1 md:order-2">
-      <h3 class="text-lg md:text-xl font-semibold text-white mb-3">Victoria Schimelfenning</h3>
-      <p class="text-white/80 leading-relaxed">
-        Diseñadora UX/UI visual en formación de programación, apasionada por crear interfaces limpias, intuitivas y atractivas. 
-        Aporta al equipo de <strong>CoderNeural</strong> con un enfoque en experiencia de usuario y estética moderna, 
-        complementando el desarrollo con una mirada creativa.
-      </p>
-    </div>
-  </div>
-
-  </section>
-
-  <!-- Servicios -->
-  <section class="py-24 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700" id="servicios">
-    <div class="max-w-7xl mx-auto px-6 md:px-8">
-      <h2 class="section-title text-center mb-12">Servicios</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <article class="card fade-in">
-          <i class="fas fa-brain text-4xl text-pink-300 mb-4"></i>
-          <h3 class="card-title">IA & Automatización</h3>
-          <p class="card-text">Integramos IA en tu negocio con OpenAI en tu propia cuenta.
-Chatbots, automatización de reportes y respuestas rápidas con tus documentos.
-Reducí costos, mejorá la atención y hacé que tu equipo gane tiempo.</p>
-        </article>
-        <article class="card fade-in">
-          <i class="fas fa-diagram-project text-4xl text-blue-300 mb-4"></i>
-          <h3 class="card-title">Arquitectura & APIs</h3>
-          <p class="card-text">Diseñamos sistemas escalables y APIs limpias que se integran fácil con tus apps actuales.
-Prepará tu negocio para crecer sin dolores de cabeza y con procesos más ordenados.</p>
-        </article>
-        <article class="card fade-in">
-          <i class="fas fa-code text-4xl text-green-300 mb-4"></i>
-          <h3 class="card-title">Desarrollo Web</h3>
-          <p class="card-text">Construimos aplicaciones con Angular y Node.js/NestJS, pensadas para el largo plazo.
-Código limpio, mantenible y seguro, alineado a tus objetivos de negocio.</p>
-        </article>
+    <!-- Servicios -->
+    <section
+      class="py-24 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700"
+      id="servicios"
+    >
+      <div class="max-w-7xl mx-auto px-6 md:px-8">
+        <h2 class="section-title text-center mb-12">Servicios</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <article class="card fade-in">
+            <i class="fas fa-brain text-4xl text-pink-300 mb-4"></i>
+            <h3 class="card-title">IA & Automatización</h3>
+            <p class="card-text">
+              Integramos IA en tu negocio con OpenAI en tu propia cuenta.
+              Chatbots, automatización de reportes y respuestas rápidas con tus
+              documentos. Reducí costos, mejorá la atención y hacé que tu equipo
+              gane tiempo.
+            </p>
+          </article>
+          <article class="card fade-in">
+            <i class="fas fa-diagram-project text-4xl text-blue-300 mb-4"></i>
+            <h3 class="card-title">Arquitectura & APIs</h3>
+            <p class="card-text">
+              Diseñamos sistemas escalables y APIs limpias que se integran fácil
+              con tus apps actuales. Prepará tu negocio para crecer sin dolores
+              de cabeza y con procesos más ordenados.
+            </p>
+          </article>
+          <article class="card fade-in">
+            <i class="fas fa-code text-4xl text-green-300 mb-4"></i>
+            <h3 class="card-title">Desarrollo Web</h3>
+            <p class="card-text">
+              Construimos aplicaciones con Angular y Node.js/NestJS, pensadas
+              para el largo plazo. Código limpio, mantenible y seguro, alineado
+              a tus objetivos de negocio.
+            </p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <!-- Trabajos / Portfolio -->
-  <!-- <section id="trabajos" class="py-24 bg-gray-950">
+    <!-- <section id="trabajos" class="py-24 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 md:px-8">
       <h2 class="section-title text-center mb-12">Trabajos recientes</h2>
       <p class="text-center text-white/80 mb-8">Proyectos destacados donde aplicamos arquitectura, IA y desarrollo web.</p>
@@ -177,100 +298,152 @@ Código limpio, mantenible y seguro, alineado a tus objetivos de negocio.</p>
     </div>
   </section> -->
 
-  <!-- A QUIÉN AYUDAMOS -->
-<section class="py-24 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900" id="clientes">
-  <div class="max-w-7xl mx-auto px-6 md:px-8">
-    <h2 class="section-title text-center mb-12">¿A quién ayudamos?</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <article class="card fade-in">
-        <h3 class="card-title mb-2">Pymes</h3>
-        <p class="card-text">Digitalizamos procesos, automatizamos tareas y lanzamos MVPs rápidos para validar negocio.</p>
-      </article>
-      <article class="card fade-in">
-  <h3 class="card-title mb-2">Empresas</h3>
-  <p class="card-text">
-    Migraciones y modernización de sistemas, despliegues en la nube y flujos de integración continua para acelerar entregas con calidad.
-  </p>
-</article>
-      <article class="card fade-in">
-        <h3 class="card-title mb-2">Proyectos privados</h3>
-        <p class="card-text">Acompañamiento end-to-end: idea, diseño, desarrollo y despliegue. Confidencialidad total.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-  <!-- Stack -->
-  <section class="py-20 bg-gray-950" id="stack">
-    <div class="max-w-6xl mx-auto px-6 md:px-8 text-center">
-      <h2 class="section-title mb-12">Tecnologías que usamos</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-6 gap-8 items-center justify-items-center">
-        <!-- Azure -->
-        <div class="fade-in">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" class="h-16 w-auto mx-auto mb-3">
-          <p class="text-white/70 text-sm">Azure</p>
-        </div>
-        <!-- Node.js -->
-        <div class="fade-in">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="h-16 w-auto mx-auto mb-3">
-          <p class="text-white/70 text-sm">Node.js</p>
-        </div>
-        <!-- NestJS -->
-        <div class="fade-in">
-          <img src="https://nestjs.com/img/logo-small.svg" alt="NestJS" class="h-16 w-auto mx-auto mb-3">
-          <p class="text-white/70 text-sm">NestJS</p>
-        </div>
-        <!-- Angular -->
-        <div class="fade-in">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="h-16 w-auto mx-auto mb-3">
-          <p class="text-white/70 text-sm">Angular</p>
-        </div>
-        <!-- Python -->
-        <div class="fade-in">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="h-16 w-auto mx-auto mb-3">
-          <p class="text-white/70 text-sm">Python</p>
-        </div>
-        <!-- OpenAI -->
-        <div class="fade-in">
-          <img src="https://seeklogo.com/images/O/openai-logo-8B9BFEDC26-seeklogo.com.png" alt="OpenAI" class="h-16 w-auto mx-auto mb-3">
-          <p class="text-white/70 text-sm">OpenAI</p>
+    <!-- A QUIÉN AYUDAMOS -->
+    <section
+      class="py-24 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900"
+      id="clientes"
+    >
+      <div class="max-w-7xl mx-auto px-6 md:px-8">
+        <h2 class="section-title text-center mb-12">¿A quién ayudamos?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <article class="card fade-in">
+            <h3 class="card-title mb-2">Pymes</h3>
+            <p class="card-text">
+              Digitalizamos procesos, automatizamos tareas y lanzamos MVPs
+              rápidos para validar negocio.
+            </p>
+          </article>
+          <article class="card fade-in">
+            <h3 class="card-title mb-2">Empresas</h3>
+            <p class="card-text">
+              Migraciones y modernización de sistemas, despliegues en la nube y
+              flujos de integración continua para acelerar entregas con calidad.
+            </p>
+          </article>
+          <article class="card fade-in">
+            <h3 class="card-title mb-2">Proyectos privados</h3>
+            <p class="card-text">
+              Acompañamiento end-to-end: idea, diseño, desarrollo y despliegue.
+              Confidencialidad total.
+            </p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contacto -->
-  <section class="py-24 bg-gray-900 text-center" id="contacto">
-    <div class="max-w-3xl mx-auto px-6 fade-in">
-      <h2 class="section-title mb-6">Contacto</h2>
-     <p class="text-white/80 mb-8">
-  ¿Sos <strong>pyme</strong>, <strong>empresa</strong> o tenés un <strong>proyecto privado</strong>? Contanos tu idea y te proponemos la mejor ruta técnica.
-</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="https://wa.me/3764983924?text=Hola%20Renzo,%20quisiera%20saber%20más%20sobre%20los%20servicios%20de%20CoderNeural.%20🙌" target="_blank" class="btn-primary">
-          <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp
-        </a>
-        <a href="https://linkedin.com/in/renzo-g-fedeli" target="_blank" class="btn-secondary">
+    <!-- Stack -->
+    <section class="py-20 bg-gray-950" id="stack">
+      <div class="max-w-6xl mx-auto px-6 md:px-8 text-center">
+        <h2 class="section-title mb-12">Tecnologías que usamos</h2>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-6 gap-8 items-center justify-items-center"
+        >
+          <!-- Azure -->
+          <!-- <div class="fade-in">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+              alt="Microsoft Azure"
+              class="h-16 w-auto mx-auto mb-3"
+            />
+            <p class="text-white/70 text-sm">Azure</p>
+          </div> -->
+          <!-- Node.js -->
+          <div class="fade-in">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="Node.js"
+              class="h-16 w-auto mx-auto mb-3"
+            />
+            <p class="text-white/70 text-sm">Node.js</p>
+          </div>
+          <!-- NestJS -->
+          <div class="fade-in">
+            <img
+              src="https://nestjs.com/img/logo-small.svg"
+              alt="NestJS"
+              class="h-16 w-auto mx-auto mb-3"
+            />
+            <p class="text-white/70 text-sm">NestJS</p>
+          </div>
+          <!-- Angular -->
+          <div class="fade-in">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+              alt="Angular"
+              class="h-16 w-auto mx-auto mb-3"
+            />
+            <p class="text-white/70 text-sm">Angular</p>
+          </div>
+          <!-- Python -->
+          <div class="fade-in">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+              alt="Python"
+              class="h-16 w-auto mx-auto mb-3"
+            />
+            <p class="text-white/70 text-sm">Python</p>
+          </div>
+          <!-- OpenAI -->
+          <div class="fade-in">
+            <img src="assets/OpenAI-white-monoblossom.svg" alt="ChatGPT" class="h-16 w-auto mx-auto mb-3" />
+            <p class="text-white/70 text-sm">OpenAI</p>
+          </div>
+
+          <!-- Gemini-->
+          <div class="fade-in">
+            <img src="assets/Google_Gemini_logo.svg" alt="Gemini" class="h-16 w-auto mx-auto mb-3" />
+            <p class="text-white/70 text-sm">Gemini</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="py-24 bg-gray-900 text-center" id="contacto">
+      <div class="max-w-3xl mx-auto px-6 fade-in">
+        <h2 class="section-title mb-6">Contacto</h2>
+        <p class="text-white/80 mb-8">
+          ¿Sos <strong>pyme</strong>, <strong>empresa</strong> o tenés un
+          <strong>proyecto privado</strong>? Contanos tu idea y te proponemos la
+          mejor ruta técnica.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="https://wa.me/3764983924?text=Hola%20Renzo,%20quisiera%20saber%20más%20sobre%20los%20servicios%20de%20CoderNeural.%20🙌"
+            target="_blank"
+            class="btn-primary"
+          >
+            <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp
+          </a>
+          <!-- <a href="https://linkedin.com/in/renzo-g-fedeli" target="_blank" class="btn-secondary">
           <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
-        </a>
-        <a href="mailto:contacto@coderneural.com" class="btn-secondary">
-          <i class="fa-solid fa-envelope mr-2"></i> contacto@coderneural.com
-        </a>
+        </a> -->
+          <a href="mailto:contacto@coderneural.com" class="btn-secondary">
+            <i class="fa-solid fa-envelope mr-2"></i> contacto@coderneural.com
+          </a>
+        </div>
+        <p class="text-xs text-white/60 mt-4">
+          Operamos remoto. Base: Posadas, Misiones (UTC−03:00).
+        </p>
       </div>
-      <p class="text-xs text-white/60 mt-4">Operamos remoto. Base: Posadas, Misiones (UTC−03:00).</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-6 bg-gray-800 text-gray-400 text-center">
-    <p>© 2025 CoderNeural — Consultoría de Software & IA</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-800 text-gray-400 text-center">
+  <p>© <span id="year">2025</span> CoderNeural — Consultoría de Software & IA</p>
+</footer>
 
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/3764983924?text=Hola%20Renzo,%20quisiera%20saber%20más%20sobre%20los%20servicios%20de%20CoderNeural.%20🙌" target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-xl transition transform hover:scale-110" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp text-2xl"></i>
-  </a>
+    <!-- Botón flotante WhatsApp -->
+    <a
+      href="https://wa.me/3764983924?text=Hola%20Renzo,%20quisiera%20saber%20más%20sobre%20los%20servicios%20de%20CoderNeural.%20🙌"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-xl transition transform hover:scale-110"
+      aria-label="WhatsApp"
+    >
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
