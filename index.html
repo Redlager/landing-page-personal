@@ -30,11 +30,13 @@
     <meta name="msapplication-config" content="/browserconfig.xml" />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" sizes="any" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" sizes="any" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png" />
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -64,9 +66,9 @@
         >
           <img
             id="site-logo"
-            src="assets/coderneural-logo-32.svg"
+            src="assets/logo-morado-coder-neural-favicon.png"
             alt="Logo CoderNeural"
-            class="w-8 h-8 rounded-md object-contain"
+            class="w-8 h-8 rounded-full object-contain"
             loading="lazy"
             decoding="async"
             onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='inline-flex'"
@@ -330,7 +332,7 @@
       <div class="max-w-7xl mx-auto px-6 md:px-8">
         <h2 class="section-title text-center mb-12">Trabajos recientes</h2>
         <!-- <p class="text-center text-white/80 mb-8">Proyectos realizados.</p> -->
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           <article class="card fade-in">
             <img
               src="./assets/Logo SVABGOADAS.jpeg"
@@ -361,16 +363,43 @@
               >Ver sitio →</a
             >
           </article>
+          <article class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=60"
+              alt="Bot de WhatsApp con IA Grok"
+              class="w-full h-40 object-cover rounded-lg mb-4"
+            />
+            <div class="mb-2">
+              <h3 class="card-title">Bot de WhatsApp con IA</h3>
+              <div class="flex flex-wrap gap-1 mt-1">
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 text-xs bg-white/10 rounded-md">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-4 w-4" alt="" />
+                  Python
+                </span>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 text-xs bg-white/10 rounded-md">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="h-4 w-4" alt="" />
+                  PostgreSQL
+                </span>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 text-xs bg-white/10 rounded-md">
+                  <span class="font-bold text-white/80 leading-none">⚡</span>
+                  Groq
+                </span>
+              </div>
+            </div>
+            <p class="card-text text-white/80">
+              Asistente conversacional en WhatsApp impulsado por Groq. Responde consultas en lenguaje natural, registra interacciones en PostgreSQL y automatiza la atención al cliente 24/7.
+            </p>
+            <a
+              href="https://wa.me/3764983924?text=Hola%20Renzo,%20quisiera%20saber%20m%C3%A1s%20sobre%20los%20servicios%20de%20CoderNeural.%20%F0%9F%99%8C"
+              target="_blank"
+              class="mt-4 inline-block text-pink-400 hover:underline"
+              >Probar bot →</a
+            >
+          </article>
           <!-- <article class="card fade-in">
           <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60" alt="Proyecto 2" class="w-full h-40 object-cover rounded-lg mb-4">
           <h3 class="card-title">Dashboard Analítico</h3>
           <p class="card-text text-white/80">API y panel de control para métricas en tiempo real y reportes automáticos.</p>
-          <a href="#" class="mt-4 inline-block text-pink-400 hover:underline">Ver caso</a>
-        </article>
-        <article class="card fade-in">
-          <img src="https://images.unsplash.com/photo-1531497865144-0463ec1e2d5a?auto=format&fit=crop&w=800&q=60" alt="Proyecto 3" class="w-full h-40 object-cover rounded-lg mb-4">
-          <h3 class="card-title">Integración IA</h3>
-          <p class="card-text text-white/80">Chatbot con búsqueda semántica sobre documentación privada del cliente.</p>
           <a href="#" class="mt-4 inline-block text-pink-400 hover:underline">Ver caso</a>
         </article> -->
         </div>
@@ -415,15 +444,6 @@
       <div class="max-w-6xl mx-auto px-6 md:px-8 text-center">
         <h2 class="section-title mb-12">Tecnologías que usamos</h2>
         <div class="flex flex-wrap gap-8 items-center justify-center">
-          <!-- Azure -->
-          <!-- <div class="fade-in">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-              alt="Microsoft Azure"
-              class="h-16 w-auto mx-auto mb-3"
-            />
-            <p class="text-white/70 text-sm">Azure</p>
-          </div> -->
           <!-- Node.js -->
           <div class="fade-in">
             <img
