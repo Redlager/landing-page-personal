@@ -1,3 +1,7 @@
+// Año dinámico en footer
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 // Animación suave on-scroll
 const faders = document.querySelectorAll('.fade-in');
 const io = new IntersectionObserver((entries) => {
