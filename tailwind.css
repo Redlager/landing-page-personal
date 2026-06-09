@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { --ring: rgba(255,255,255,0.08); }
+  html { scroll-behavior: smooth; }
+}
+
+@layer components {
+  .nav-link { color: rgba(255,255,255,0.8); font-weight: 500; }
+  .nav-link:hover { color: #fff; }
+
+  .card {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--ring);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+  .card-title { font-size: 1.125rem; font-weight: 700; margin-bottom: .25rem; }
+  .card-text { color: rgba(255,255,255,.78); }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .9rem 1.25rem;
+    border-radius: .75rem;
+    font-weight: 700;
+    background: #db2777;
+    color: #fff;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .btn-primary:hover { transform: translateY(-2px); background: #ec4899; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .9rem 1.25rem;
+    border-radius: .75rem;
+    font-weight: 700;
+    background: rgba(255,255,255,.1);
+    color: #fff;
+    border: 1px solid var(--ring);
+    transition: transform .2s ease, background .2s ease;
+  }
+  .btn-secondary:hover { transform: translateY(-2px); background: rgba(255,255,255,.16); }
+
+  .fade-in { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+  .fade-in.in-view { opacity: 1; transform: translateY(0); }
+}
