@@ -1,0 +1,25 @@
+{
+  "name": "landing-page-personal",
+  "version": "1.0.0",
+  "description": "Landing page personal para presentar mis **servicios de software e inteligencia artificial**.  \r Diseñada como carta de presentación profesional y publicada en **GitHub Pages + Cloudflare**.",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i tailwind.css -o style.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Redlager/landing-page-personal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Redlager/landing-page-personal/issues"
+  },
+  "homepage": "https://github.com/Redlager/landing-page-personal#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}
