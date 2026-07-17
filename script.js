@@ -58,4 +58,138 @@ if('IntersectionObserver' in window){
 document.addEventListener("DOMContentLoaded", () => {
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
+
+  // UTM capture, persist in cookie (30 days) and send to Google Analytics (gtag)
+  (function(){
+    const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+
+    function parseQuery(search){
+      const out = {};
+      if(!search) return out;
+      const q = search.charAt(0)==='?'?search.substring(1):search;
+      const usp = new URLSearchParams(q);
+      for(const [k,v] of usp.entries()){
+        if(utmKeys.includes(k) || k.startsWith('utm_')) out[k] = v;
+      }
+      return out;
+    }
+
+    function setCookie(name, value, days){
+      const maxAge = days ? '; Max-Age=' + (days*24*60*60) : '';
+      const secure = location.protocol === 'https:' ? '; Secure; SameSite=Lax' : '; SameSite=Lax';
+      document.cookie = name + '=' + encodeURIComponent(value) + maxAge + '; Path=/' + secure;
+    }
+
+    function getCookie(name){
+      const pairs = document.cookie ? document.cookie.split('; ') : [];
+      for(const p of pairs){
+        const idx = p.indexOf('=');
+        if(idx>0){
+          const k = p.substring(0, idx);
+          const v = p.substring(idx+1);
+          if(k === name) return decodeURIComponent(v);
+        }
+      }
+      return null;
+    }
+
+    // send event to gtag when available, retrying up to maxAttempts
+    function sendGtagEvent(eventName, params){
+      const maxAttempts = 50; // ~10s with 200ms interval
+      let attempts = 0;
+      const trySend = () => {
+        attempts++;
+        if(window.gtag && typeof window.gtag === 'function'){
+          try{ window.gtag('event', eventName, params); }catch(e){}
+        } else if(attempts < maxAttempts){
+          setTimeout(trySend, 200);
+        }
+      };
+      trySend();
+    }
+
+    try{
+      const urlUtms = parseQuery(location.search);
+      const savedRaw = getCookie('cn_utms');
+      let savedObj = {};
+      if(savedRaw){
+        try{ savedObj = JSON.parse(savedRaw); }catch(e){ savedObj = {}; }
+      }
+
+      const hasUrlUtms = Object.keys(urlUtms).length > 0;
+      if(hasUrlUtms){
+        const merged = Object.assign({}, savedObj, urlUtms);
+        setCookie('cn_utms', JSON.stringify(merged), 30);
+        sendGtagEvent('utm_parameters', Object.assign({event_category: 'utm_capture', non_interaction: true}, merged));
+      } else if(Object.keys(savedObj).length > 0){
+        // No UTM in URL but we have saved UTMs — notify GA so they are associated with this session/pageview
+        sendGtagEvent('utm_parameters', Object.assign({event_category: 'utm_capture_from_cookie', non_interaction: true}, savedObj));
+      }
+
+      // Helper to read saved UTMs for attaching to other events
+      const getSavedUtms = () => {
+        const raw = getCookie('cn_utms');
+        if(!raw) return {};
+        try{ return JSON.parse(raw); }catch(e){ return {}; }
+      };
+
+      // Generic click tracker for links matching selector
+      function attachClickTracker(selector, eventName, extraProps){
+        document.querySelectorAll(selector).forEach(el=>{
+          el.addEventListener('click', (ev)=>{
+            const utms = getSavedUtms();
+            const payload = Object.assign({event_category: 'engagement', non_interaction: false}, extraProps||{}, utms);
+            sendGtagEvent(eventName, payload);
+          });
+        });
+      }
+
+      // WhatsApp (wa.me, api.whatsapp.com, whatsapp.com)
+      attachClickTracker('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="whatsapp.com"]', 'click_whatsapp');
+
+      // Email (mailto or Cloudflare email-protection link)
+      attachClickTracker('a[href^="mailto:"] , a[href*="/cdn-cgi/l/email-protection"]', 'click_email');
+
+      // Instagram links
+      attachClickTracker('a[href*="instagram.com"]', 'click_instagram');
+
+      // Phone calls (tel:)
+      attachClickTracker('a[href^="tel:"]', 'click_llamar');
+
+      // Form submissions
+      document.querySelectorAll('form').forEach(f => {
+        f.addEventListener('submit', (e) => {
+          const utms = getSavedUtms();
+          const payload = Object.assign({event_category: 'engagement', non_interaction: false, form_action: f.action || null, form_id: f.id || null}, utms);
+          sendGtagEvent('submit_form', payload);
+        }, {passive:true});
+      });
+
+      // Scroll 90% — fire once
+      let scroll90Fired = false;
+      function checkScroll90(){
+        if(scroll90Fired) return;
+        const sh = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const reached = (window.scrollY + window.innerHeight) / sh;
+        if(reached >= 0.9){
+          scroll90Fired = true;
+          const utms = getSavedUtms();
+          sendGtagEvent('scroll_90', Object.assign({event_category: 'engagement', non_interaction: true}, utms));
+        }
+      }
+      window.addEventListener('scroll', throttle(checkScroll90, 200));
+
+      // simple throttle
+      function throttle(fn, wait){
+        let t = null;
+        return function(){
+          if(t) return;
+          t = setTimeout(()=>{ fn(); t = null; }, wait);
+        };
+      }
+
+    }catch(e){
+      console.warn('UTM capture / tracking enhancements failed', e);
+    }
+  })();
 });
