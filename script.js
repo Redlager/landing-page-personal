@@ -2,6 +2,99 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+const cookieConsentKey = 'cn_cookie_consent';
+
+function getCookieConsent() {
+  try {
+    return window.localStorage.getItem(cookieConsentKey);
+  } catch (error) {
+    return null;
+  }
+}
+
+function setCookieConsent(value) {
+  try {
+    window.localStorage.setItem(cookieConsentKey, value);
+  } catch (error) {
+    // ignore storage errors
+  }
+}
+
+function isCookieConsentAccepted() {
+  return getCookieConsent() === 'accepted';
+}
+
+function injectGoogleAnalytics() {
+  if (window.cnAnalyticsInitialized) return;
+  const gaSrc = 'https://www.googletagmanager.com/gtag/js?id=G-K5SNMFQC19';
+  if (!document.querySelector(`script[src="${gaSrc}"]`)) {
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = gaSrc;
+    document.head.appendChild(gaScript);
+  }
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-K5SNMFQC19', { anonymize_ip: true });
+}
+
+function injectClarity() {
+  if (document.querySelector('script[src^="https://www.clarity.ms/tag/"]')) return;
+  window.clarity = window.clarity || function() { (window.clarity.q = window.clarity.q || []).push(arguments); };
+  const clarityScript = document.createElement('script');
+  clarityScript.async = true;
+  clarityScript.src = 'https://www.clarity.ms/tag/xrkok9cud1';
+  document.head.appendChild(clarityScript);
+}
+
+function initAnalytics() {
+  if (window.cnAnalyticsInitialized) return;
+  window.cnAnalyticsInitialized = true;
+  injectGoogleAnalytics();
+  injectClarity();
+}
+
+function showCookieBanner() {
+  const banner = document.getElementById('cookie-consent-banner');
+  if (banner) banner.classList.remove('hidden');
+}
+
+function hideCookieBanner() {
+  const banner = document.getElementById('cookie-consent-banner');
+  if (banner) banner.classList.add('hidden');
+}
+
+function acceptCookieConsent() {
+  setCookieConsent('accepted');
+  initAnalytics();
+  hideCookieBanner();
+}
+
+function rejectCookieConsent() {
+  setCookieConsent('rejected');
+  hideCookieBanner();
+}
+
+function setupCookieConsent() {
+  const banner = document.getElementById('cookie-consent-banner');
+  if (!banner) return;
+  const consent = getCookieConsent();
+  if (consent === 'accepted') {
+    initAnalytics();
+    hideCookieBanner();
+  } else if (consent === 'rejected') {
+    hideCookieBanner();
+  } else {
+    showCookieBanner();
+  }
+
+  const acceptButton = document.getElementById('cookie-consent-accept');
+  const rejectButton = document.getElementById('cookie-consent-reject');
+  if (acceptButton) acceptButton.addEventListener('click', acceptCookieConsent);
+  if (rejectButton) rejectButton.addEventListener('click', rejectCookieConsent);
+}
+
 // Animación suave on-scroll
 const faders = document.querySelectorAll('.fade-in');
 const io = new IntersectionObserver((entries) => {
@@ -191,5 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }catch(e){
       console.warn('UTM capture / tracking enhancements failed', e);
     }
+    setupCookieConsent();
   })();
 });
