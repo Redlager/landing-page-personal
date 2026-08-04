@@ -2,28 +2,6 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-const cookieConsentKey = 'cn_cookie_consent';
-
-function getCookieConsent() {
-  try {
-    return window.localStorage.getItem(cookieConsentKey);
-  } catch (error) {
-    return null;
-  }
-}
-
-function setCookieConsent(value) {
-  try {
-    window.localStorage.setItem(cookieConsentKey, value);
-  } catch (error) {
-    // ignore storage errors
-  }
-}
-
-function isCookieConsentAccepted() {
-  return getCookieConsent() === 'accepted';
-}
-
 function injectGoogleAnalytics() {
   if (window.cnAnalyticsInitialized) return;
   const gaSrc = 'https://www.googletagmanager.com/gtag/js?id=G-K5SNMFQC19';
@@ -55,44 +33,25 @@ function initAnalytics() {
   injectClarity();
 }
 
-function showCookieBanner() {
-  const banner = document.getElementById('cookie-consent-banner');
-  if (banner) banner.classList.remove('hidden');
+// Cookie notice helpers (visual dismiss)
+function markCookieNoticeSeen() {
+  try { localStorage.setItem('cn_cookie_notice_seen', '1'); } catch (e) {}
 }
-
-function hideCookieBanner() {
-  const banner = document.getElementById('cookie-consent-banner');
-  if (banner) banner.classList.add('hidden');
+function isCookieNoticeSeen() {
+  try { return localStorage.getItem('cn_cookie_notice_seen') === '1'; } catch (e) { return false; }
 }
-
-function acceptCookieConsent() {
-  setCookieConsent('accepted');
-  initAnalytics();
-  hideCookieBanner();
+function hideCookieNotice() {
+  const b = document.getElementById('cookie-notice-banner');
+  if (b) b.classList.add('hidden');
 }
-
-function rejectCookieConsent() {
-  setCookieConsent('rejected');
-  hideCookieBanner();
-}
-
-function setupCookieConsent() {
-  const banner = document.getElementById('cookie-consent-banner');
-  if (!banner) return;
-  const consent = getCookieConsent();
-  if (consent === 'accepted') {
-    initAnalytics();
-    hideCookieBanner();
-  } else if (consent === 'rejected') {
-    hideCookieBanner();
-  } else {
-    showCookieBanner();
-  }
-
-  const acceptButton = document.getElementById('cookie-consent-accept');
-  const rejectButton = document.getElementById('cookie-consent-reject');
-  if (acceptButton) acceptButton.addEventListener('click', acceptCookieConsent);
-  if (rejectButton) rejectButton.addEventListener('click', rejectCookieConsent);
+function setupCookieNotice() {
+  const b = document.getElementById('cookie-notice-banner');
+  if (!b) return;
+  if (isCookieNoticeSeen()) { hideCookieNotice(); return; }
+  const accept = document.getElementById('cookie-notice-accept');
+  const close = document.getElementById('cookie-notice-close');
+  if (accept) accept.addEventListener('click', () => { markCookieNoticeSeen(); hideCookieNotice(); });
+  if (close) close.addEventListener('click', () => { markCookieNoticeSeen(); hideCookieNotice(); });
 }
 
 // Animación suave on-scroll
@@ -284,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }catch(e){
       console.warn('UTM capture / tracking enhancements failed', e);
     }
-    setupCookieConsent();
+    initAnalytics();
+    try { setupCookieNotice(); } catch (e) { /* ignore */ }
   })();
 });

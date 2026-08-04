@@ -49,6 +49,27 @@ html { scroll-behavior: smooth; }
   align-items: center;
 }
 
+.cookie-close-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.9);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cookie-accept-btn {
+  padding: .4rem .6rem;
+  font-size: .875rem;
+  border-radius: .5rem;
+}
+
 @media (max-width: 640px) {
   .cookie-consent-banner {
     flex-direction: column;
